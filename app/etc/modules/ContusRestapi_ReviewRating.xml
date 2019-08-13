@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_ReviewRating>
+			<active>true</active>
+			<codePool>local</codePool>
+		</ContusRestapi_ReviewRating>
+	</modules>
+</config> 

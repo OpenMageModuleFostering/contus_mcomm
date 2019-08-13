@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_Cartapi>
+			<version>0.1.0.0</version>
+		</ContusRestapi_Cartapi>
+	</modules>
+	<global>
+		<models>
+			<cartapi>
+				<class>ContusRestapi_Cartapi_Model</class>
+			</cartapi>
+		</models>
+	</global>
+</config>

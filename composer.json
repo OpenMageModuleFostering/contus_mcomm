@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Contus_Mcomm",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "Contus Mcom  Module ",
+    "authors": [
+    {
+        "name": "contus",
+        "email": "developers@contus.in"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

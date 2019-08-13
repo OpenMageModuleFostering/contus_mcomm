@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_CartAddressapi>
+			<version>0.1.0.0</version>
+		</ContusRestapi_CartAddressapi>
+	</modules>
+	<global>
+		<models>
+			<cartAddressapi>
+				<class>ContusRestapi_CartAddressapi_Model</class>
+			</cartAddressapi>
+		</models>
+	</global>
+</config>

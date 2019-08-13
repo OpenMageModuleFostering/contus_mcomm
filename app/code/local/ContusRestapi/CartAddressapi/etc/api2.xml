@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="CartAddressapi">
+				<title>Cart Address API Module</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<cartAddressapi translate="title" module="CartAddressapi">
+				<group>contusrestapi</group>
+				<model>cartAddressapi/api2_cartAddressapi</model>
+				<title>Cart Address</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>websiteid</website_id>
+					<store_id>Associate to Store</store_id>
+					<quote_id>Shopping cart Id</quote_id>
+					<billing_address_id>Billing Address Id</billing_address_id>
+					<shipping_address_id>Shipping Address Id</shipping_address_id>
+					 <address_type>address_type</address_type>
+                    <same_for_shipping>same_for_shipping</same_for_shipping>
+                    <first_name>first_name</first_name>
+                    <last_name>last_name</last_name>
+                    <address1>address1</address1>
+                    <city>city</city>
+                    <state>state</state>
+                    <zip>zip</zip>
+                    <country>country</country>
+                    <telephone>telephone</telephone>
+                    <success>success</success>
+                    <message>message</message>
+                    <token>Token</token>
+                    <customer_id>Customer Id</customer_id>
+				</attributes>
+				<routes>
+				
+				<address_add>
+                        <route>/cart_address/add/</route>
+                        <action_type>collection</action_type>
+                </address_add>
+					
+				</routes>
+				<versions>1</versions>
+			</cartAddressapi>
+
+		</resources>
+	</api2>
+</config>

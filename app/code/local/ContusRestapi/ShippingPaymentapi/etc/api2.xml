@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="ShippingPaymentapi">
+				<title>Home Page API Module</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<shippingPaymentapi translate="title" module="ShippingPaymentapi">
+				<group>contusrestapi</group>
+				<model>shippingPaymentapi/api2_shippingPaymentapi</model>
+				<title>Home api</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>websiteid</website_id>
+					<store_id>Associate to Store</store_id>
+					<quote_id>Shopping cart Id</quote_id>
+					<shipping_method>Shipping Method</shipping_method>
+					<payment_method>Payment Method</payment_method>
+					 <status>status</status>
+                    <message>message</message>
+                    <token>Token</token>
+                    <customer_id>Customer Id</customer_id>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/shippingpaymentapi/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					
+					 <custom_cart_payment_save>
+                        <route>/cart/add_shipping_payment/</route>
+                        <action_type>collection</action_type>
+                    </custom_cart_payment_save>
+				</routes>
+				<versions>1</versions>
+			</shippingPaymentapi>
+
+		</resources>
+	</api2>
+</config>

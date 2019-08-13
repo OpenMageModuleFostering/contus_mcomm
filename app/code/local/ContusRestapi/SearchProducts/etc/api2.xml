@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="SearchProducts">
+				<title>Search Products</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<searchProducts translate="title" module="SearchProducts">
+				<group>contusrestapi</group>
+				<model>searchProducts/api2_searchProducts</model>
+				<title>Search Products</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>websiteid</website_id>
+					<store_id>Associate to Store</store_id>
+					<category_id>Category Id</category_id>
+					<search_term>Search Word</search_term>
+					<page>page</page>
+					<limit>Limit</limit>
+					<result>Search Result</result>
+					<count>Page Count</count>
+					<total_products>Total Products Count</total_products>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/search/products/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+				</routes>
+				<versions>1</versions>
+			</searchProducts>
+
+		</resources>
+	</api2>
+</config>

@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="AddressBook">
+				<title>AddressBook</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<addressBook translate="title" module="AddressBook">
+				<group>contusrestapi</group>
+				<model>addressBook/api2_addressBook</model>
+				<working_model>customer/address</working_model>
+				<title>AddressBook Api</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>Website id</website_id>
+					<store_id>Store Id</store_id>
+					<customer_id>customer Id</customer_id>
+					<address_id>Addrss ID</address_id>
+					<result>Result</result>
+					<success>success</success>
+					<message>message</message>
+					<entity_id>Customer Address ID</entity_id>
+					<is_default_billing>Is Default Billing Address</is_default_billing>
+					<is_default_shipping>Is Default Shipping Address</is_default_shipping>
+					<street>Street</street>
+					<city>City</city>
+					<firstname>first name</firstname>
+					<lastname>Last name</lastname>
+					<country_id>Country id</country_id>
+					<postcode>Postal Code</postcode>
+					<telephone>Telephone</telephone>
+					<company>Company</company>
+					<region>region</region>
+					<fax></fax>
+					<token>Token</token>
+					<country_name>Country name</country_name>
+					<isValidToken>Is Valid Token</isValidToken>
+					<success>Success</success>
+					<region_code>region_code</region_code>
+					<region_id>Region id</region_id>
+				</attributes>
+
+				<exclude_attributes>
+					<admin>
+						<read>
+							<region_id>1</region_id>
+							<vat_is_valid>1</vat_is_valid>
+							<vat_request_date>1</vat_request_date>
+							<vat_request_id>1</vat_request_id>
+							<vat_request_success>1</vat_request_success>
+						</read>
+						<write>
+							<entity_id>1</entity_id>
+							<region_id>1</region_id>
+							<vat_is_valid>1</vat_is_valid>
+							<vat_request_date>1</vat_request_date>
+							<vat_request_id>1</vat_request_id>
+							<vat_request_success>1</vat_request_success>
+						</write>
+					</admin>
+					<customer>
+						<read>
+							<region_id>1</region_id>
+						</read>
+						<write>
+							<entity_id>1</entity_id>
+							<region_id>1</region_id>
+						</write>
+					</customer>
+				</exclude_attributes>
+				<validators>
+					<eav>
+						<admin>
+							<entity_model>customer/address</entity_model>
+							<form_model>customer/form</form_model>
+							<form_code>
+								<update>adminhtml_customer_address</update>
+							</form_code>
+						</admin>
+						<customer>
+							<entity_model>customer/address</entity_model>
+							<form_model>customer/form</form_model>
+							<form_code>
+								<update>customer_address_edit</update>
+							</form_code>
+						</customer>
+						<guest>
+							<entity_model>customer/address</entity_model>
+							<form_model>customer/form</form_model>
+							<form_code>
+								<update>customer_address_edit</update>
+							</form_code>
+						</guest>
+					</eav>
+				</validators>
+			
+				<routes>
+					<route_collection>
+						<!-- Add New Address -->
+						<route>/addressbook/add/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+
+					<!-- Update address -->
+					<address_update>
+						<route>/addressbook/update/</route>
+						<action_type>entity</action_type>
+					</address_update>
+
+					<!-- Address detail -->
+					<address_detail>
+						<route>/address_detail/</route>
+						<action_type>entity</action_type>
+					</address_detail>
+
+					<!-- Address book collection -->
+					<address_collection>
+						<route>/addressbook/</route>
+						<action_type>collection</action_type>
+					</address_collection>
+
+					<!-- Delete Address book collection -->
+					<address_delete>
+						<route>/addressbook/delete/address_id/:address_id/customer_id/:customer_id/store_id/:store_id/website_id/:website_id/token/:token</route>
+						<action_type>entity</action_type>
+					</address_delete>
+
+				</routes>
+				<versions>1</versions>
+			</addressBook>
+			
+			<addressBook_country translate="title" module="AddressBook">
+                <group>contusrestapi</group>
+                <model>addressBook/api2_country</model>
+                <title>Country</title>
+                <sort_order>16</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <delete>1</delete>
+                    </admin>
+                    <customer>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <delete>1</delete>
+                    </customer>
+                    <guest>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <delete>1</delete>
+                    </guest>
+                </privileges>
+                <attributes  module="api2">
+                    <status>status</status>
+                    <message>message</message>
+                    <website_id>Website Id</website_id>
+                </attributes>
+                <routes>
+                    <route_collection>
+                        <route>/countrycollection</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+                </routes>
+                <versions>1</versions>
+            </addressBook_country>
+            
+            <addressBook_state translate="title" module="AddressBook">
+                <group>contusrestapi</group>
+                <model>addressBook/api2_state</model>
+                <title>State</title>
+                <sort_order>17</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <delete>1</delete>
+                    </admin>
+                    <customer>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <delete>1</delete>
+                    </customer>
+                    <guest>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <delete>1</delete>
+                    </guest>
+                </privileges>
+                <attributes  module="api2">
+                    <status>status</status>
+                    <message>message</message>
+                    <countrycode>country code</countrycode>
+                    <website_id>Website Id</website_id>
+                    <result>Result</result>
+                </attributes>
+                <routes>
+                    <route_collection>
+                        <route>/statecollection/:countrycode</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+                </routes>
+                <versions>1</versions>
+            </addressBook_state>
+
+		</resources>
+	</api2>
+</config>

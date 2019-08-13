@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="Login">
+				<title>Login API Module</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<login translate="title" module="Login">
+				<group>contusrestapi</group>
+				<model>login/api2_login</model>
+				<title>Customer Login</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<email>email</email>
+					<website_id>websiteid</website_id>
+					<action>action</action>
+					<password>password</password>
+					<success>success</success>
+					<message>message</message>
+					<name>name</name>
+					<userid>userid</userid>
+					<error>Error</error>
+					<device_token>Device Token</device_token>
+					<device_type>Device Type</device_type>
+					<customer_id>Customer Id</customer_id>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/customer/login</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					
+					<gcmtoken_update>
+                        <route>/customer/gcmtoken_update/</route> 
+                        <action_type>entity</action_type>
+                    </gcmtoken_update>
+				</routes>
+				<versions>1</versions>
+			</login>
+
+			<customer translate="title" module="api2">
+				<attributes translate="password" module="api2">
+					<password>Password</password>
+				</attributes>
+			</customer>
+			<login_forgot_pass translate="title" module="Login">
+				<group>contusrestapi</group>
+				<model>login/api2_forgotpassword</model>
+				<!-- <working_model>restapi/api2_restapi</working_model> -->
+				<title>Customer Forgot Password</title>
+				<sort_order>12</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<email>Email</email>
+					<status>status</status>
+					<message>message</message>
+					<website_id>Website Id</website_id>
+					<error>Error</error>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/customer/forgotpassword</route>
+						<action_type>collection</action_type>
+					</route_collection>
+				</routes>
+				<versions>1</versions>
+			</login_forgot_pass>
+
+			
+		</resources>
+	</api2>
+</config>

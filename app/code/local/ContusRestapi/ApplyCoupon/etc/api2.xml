@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="ApplyCoupon">
+				<title>Apply Coupon Api</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<applyCoupon translate="title" module="ApplyCoupon">
+				<group>contusrestapi</group>
+				<model>applyCoupon/api2_applyCoupon</model>
+				<title>Apply Coupon Api</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+				    <website_id>Website id</website_id>
+				    <store_id>Store Id</store_id>
+					<customer_id>customer Id</customer_id>
+					<quote_id>quote Id</quote_id>
+					<coupon_code>Coupon Code</coupon_code>
+					<result>Result</result>
+					<success>success</success>
+					<message>message</message>
+					<token>Token</token>
+				</attributes>
+				<routes>
+					<route_collection>
+					<!-- Apply Coupon to Cart -->
+						<route>/coupon/apply</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					
+					<!-- Cancel coupon from cart -->
+					 <coupon_update>
+                        <route>/coupon/cancel/</route> 
+                        <action_type>entity</action_type>
+                    </coupon_update>
+				
+				</routes>
+				<versions>1</versions>
+			</applyCoupon>
+
+		</resources>
+	</api2>
+</config>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_Registration>
+			<version>0.0.1</version>
+		</ContusRestapi_Registration>
+	</modules>
+	<global>
+		<models>
+			
+			<registration>
+				<class>ContusRestapi_Registration_Model</class>
+			</registration>
+		</models>
+	</global>
+</config>

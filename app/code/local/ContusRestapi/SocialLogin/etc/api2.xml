@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="SocialLogin">
+				<title>Social Login API Module</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<socialLogin translate="title" module="SocialLogin">
+				<group>contusrestapi</group>
+				<model>socialLogin/api2_socialLogin</model>
+				<title>Customer Login</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<email>email</email>
+					<website_id>websiteid</website_id>
+					<customer_id>Customer Id</customer_id>
+					<firstname>First Name</firstname>
+					<lastname>Last Name</lastname>
+					<created_in>Created From</created_in>
+					<group_id>Group</group_id>
+					<confirmation>Is Confirmed</confirmation>
+					<store_id>Associate to Store</store_id>
+					<disable_auto_group_change>Disable automatic group change based on
+						VAT ID</disable_auto_group_change>
+					<social_network>Social Network</social_network>
+					<newsletter>Newsletter Subscribe</newsletter>
+					<success>Success</success>
+					<message>Message</message>
+					<error>Error</error>
+					<device_token>Device Token</device_token>
+					<device_type>Device Type</device_type>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/customer/social_login/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+				</routes>
+				<versions>1</versions>
+			</socialLogin>
+
+		</resources>
+	</api2>
+</config>

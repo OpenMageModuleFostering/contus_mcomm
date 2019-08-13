@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_Wishlistapi>
+			<active>true</active>
+			<codePool>local</codePool>
+		</ContusRestapi_Wishlistapi>
+	</modules>
+</config> 

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+    <pushnoteproducts module="pushnoteproducts">
+    <children>
+        <pushnoteproducts>
+            <children>
+                <contus_pushnoteorders translate="title" module="pushnoteorders">
+                    <sort_order>10</sort_order>
+                    <title>Orders</title>
+                    <action>pushnoteorders/adminhtml_pushnoteorders</action>
+                </contus_pushnoteorders >
+            </children>
+        </pushnoteproducts>
+        </children>
+        </pushnoteproducts>
+    </menu>
+</config>

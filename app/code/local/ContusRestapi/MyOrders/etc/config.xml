@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_MyOrders>
+			<version>0.0.1</version>
+		</ContusRestapi_MyOrders>
+	</modules>
+	<global>
+	   <models>
+			<myOrders>
+				<class>ContusRestapi_MyOrders_Model</class>
+			</myOrders>
+		</models>
+	</global>
+</config>

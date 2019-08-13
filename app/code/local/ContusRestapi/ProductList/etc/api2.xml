@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="ContusRestapi_ProductList">
+				<title>Product List</title>
+				<sort_order>20</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			 <product translate="title" module="api2">
+                <group>catalog_product</group>
+                <model>catalog/api2_product</model>
+                <working_model>catalog/product</working_model>
+                <title>Catalog Product</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </admin>
+                    <customer>
+                        <retrieve>1</retrieve>
+                    </customer>
+                    <guest>
+                        <retrieve>1</retrieve>
+                    </guest>
+                </privileges>
+                <attributes translate="entity_id type_id attribute_set_id stock_data image_url is_saleable total_reviews_count url buy_now_url has_custom_options is_in_stock regular_price_with_tax regular_price_without_tax final_price_with_tax final_price_without_tax use_config_gift_message_available use_config_gift_wrapping_available url_key_create_redirect" module="api2">
+                    <entity_id>Product ID</entity_id>
+                    <type_id>Product Type</type_id>
+                    <attribute_set_id>Attribute Set</attribute_set_id>
+                    <stock_data>Inventory Data</stock_data>
+                    <image_url>Default Image</image_url>
+                    <is_saleable>Salability Status</is_saleable>
+                    <total_reviews_count>Total Reviews Count</total_reviews_count>
+                    <url>Product URL</url>
+                    <buy_now_url>Buy Now URL</buy_now_url>
+                    <has_custom_options>Has Custom Options</has_custom_options>
+                    <is_in_stock>Stock Status</is_in_stock>
+                    <regular_price_with_tax>Regular Price With Tax</regular_price_with_tax>
+                    <regular_price_without_tax>Regular Price Without Tax</regular_price_without_tax>
+                    <final_price_with_tax>Final Price With Tax</final_price_with_tax>
+                    <final_price_without_tax>Final Price Without Tax</final_price_without_tax>
+                    <use_config_gift_message_available>Use Config Settings for Allow Gift Message</use_config_gift_message_available>
+                    <use_config_gift_wrapping_available>Use Config Settings for Allow Gift Wrapping</use_config_gift_wrapping_available>
+                    <url_key_create_redirect>Create Permanent Redirect for old URL</url_key_create_redirect>
+                    <ratings>Rating Average</ratings>
+                    <stock>Stock Status</stock>
+                    <wishlist>Wishlist</wishlist>
+                    <result>Result</result>
+                    <count>Product Count</count>
+                    <code> Code </code>
+                    <success> Success </success>
+                    <filter_attr>Filter attribute</filter_attr>
+                    <filters>Filters</filters>
+                    <error>Error</error>
+                </attributes>
+                <entity_only_attributes>
+                    <customer>
+                        <read>
+                            <has_custom_options>1</has_custom_options>
+                            <tier_price>1</tier_price>
+                            <total_reviews_count>1</total_reviews_count>
+                            <url>1</url>
+                            <buy_now_url>1</buy_now_url>
+                            <has_custom_options>1</has_custom_options>
+                            <is_in_stock>1</is_in_stock>
+                        </read>
+                    </customer>
+                    <guest>
+                        <read>
+                            <has_custom_options>1</has_custom_options>
+                            <tier_price>1</tier_price>
+                            <total_reviews_count>1</total_reviews_count>
+                            <url>1</url>
+                            <buy_now_url>1</buy_now_url>
+                            <has_custom_options>1</has_custom_options>
+                            <is_in_stock>1</is_in_stock>
+                        </read>
+                    </guest>
+                </entity_only_attributes>
+                <exclude_attributes>
+                    <customer>
+                        <read>
+                            <attribute_set_id>1</attribute_set_id>
+                            <stock_data>1/</stock_data>
+                            <use_config_gift_message_available>1</use_config_gift_message_available>
+                            <use_config_gift_wrapping_available>1</use_config_gift_wrapping_available>
+                            <url_key_create_redirect>1</url_key_create_redirect>
+                        </read>
+                    </customer>
+                    <guest>
+                        <read>
+                            <attribute_set_id>1</attribute_set_id>
+                            <stock_data>1</stock_data>
+                            <use_config_gift_message_available>1</use_config_gift_message_available>
+                            <use_config_gift_wrapping_available>1</use_config_gift_wrapping_available>
+                            <url_key_create_redirect>1</url_key_create_redirect>
+                        </read>
+                    </guest>
+                    <admin>
+                        <read>
+                            <allow_open_amount>1</allow_open_amount>
+                            <giftcard_amounts>1</giftcard_amounts>
+                            <open_amount_min>1</open_amount_min>
+                            <open_amount_max>1</open_amount_max>
+                            <image>1</image>
+                            <is_recurring>1</is_recurring>
+                            <gallery>1</gallery>
+                            <media_gallery>1</media_gallery>
+                            <price_view>1</price_view>
+                            <small_image>1</small_image>
+                            <image_url>1</image_url>
+                            <is_saleable>1</is_saleable>
+                            <total_reviews_count>1</total_reviews_count>
+                            <url>1</url>
+                            <buy_now_url>1</buy_now_url>
+                            <has_custom_options>1</has_custom_options>
+                            <is_in_stock>1</is_in_stock>
+                            <regular_price_with_tax>1</regular_price_with_tax>
+                            <regular_price_without_tax>1</regular_price_without_tax>
+                            <final_price_with_tax>1</final_price_with_tax>
+                            <final_price_without_tax>1</final_price_without_tax>
+                            <recurring_profile>1</recurring_profile>
+                            <thumbnail>1</thumbnail>
+                            <url_key_create_redirect>1</url_key_create_redirect>
+                        </read>
+                        <write>
+                            <allow_open_amount>1</allow_open_amount>
+                            <giftcard_amounts>1</giftcard_amounts>
+                            <open_amount_min>1</open_amount_min>
+                            <open_amount_max>1</open_amount_max>
+                            <image>1</image>
+                            <is_recurring>1</is_recurring>
+                            <gallery>1</gallery>
+                            <media_gallery>1</media_gallery>
+                            <price_view>1</price_view>
+                            <small_image>1</small_image>
+                            <image_url>1</image_url>
+                            <is_saleable>1</is_saleable>
+                            <total_reviews_count>1</total_reviews_count>
+                            <url>1</url>
+                            <buy_now_url>1</buy_now_url>
+                            <has_custom_options>1</has_custom_options>
+                            <is_in_stock>1</is_in_stock>
+                            <regular_price_with_tax>1</regular_price_with_tax>
+                            <regular_price_without_tax>1</regular_price_without_tax>
+                            <final_price_with_tax>1</final_price_with_tax>
+                            <final_price_without_tax>1</final_price_without_tax>
+                            <recurring_profile>1</recurring_profile>
+                            <thumbnail>1</thumbnail>
+                            <entity_id>1</entity_id>
+                        </write>
+                    </admin>
+                </exclude_attributes>
+                <routes>
+                    <route_entity>
+                        <route>/product_detail/</route>
+                        <action_type>entity</action_type>
+                    </route_entity>
+                    <route_entity_with_store>
+                        <route>/products/:id/store/:store</route>
+                        <action_type>entity</action_type>
+                    </route_entity_with_store>
+                    <route_collection>
+                        <route>/products</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+                    <route_collection_with_store>
+                        <route>/products/store/:store</route>
+                        <action_type>collection</action_type>
+                    </route_collection_with_store>
+                    <route_collection_with_category>
+                        <route>/products/category/:category_id</route>
+                        <action_type>collection</action_type>
+                    </route_collection_with_category>
+                    <route_collection_with_store_and_category>
+                        <route>/products/store/:store/category/:category_id</route>
+                        <action_type>collection</action_type>
+                    </route_collection_with_store_and_category>
+                    <route_collection_with_category_and_store>
+                        <route>/products_list/</route>
+                        <action_type>collection</action_type>
+                    </route_collection_with_category_and_store>
+                </routes>
+                <versions>1</versions>
+            </product>
+			
+		</resources>
+	</api2>
+</config>

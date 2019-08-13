@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <pushnoteorders_adminhtml_pushnoteorders_index>
+        <reference name="content">
+            <block type="adminhtml/template" template="pushnoteorders/pushnoteorders.phtml" />
+            <block type="pushnoteorders/adminhtml_pushnoteorders" name="pushnoteorders" />
+        </reference>
+    </pushnoteorders_adminhtml_pushnoteorders_index>
+</layout>

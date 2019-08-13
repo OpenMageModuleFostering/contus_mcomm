@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_SearchProducts>
+			<version>0.1.0.0</version>
+		</ContusRestapi_SearchProducts>
+	</modules>
+	<global>
+		<models>
+			<searchProducts>
+				<class>ContusRestapi_SearchProducts_Model</class>
+			</searchProducts>
+		</models>
+	</global>
+</config>

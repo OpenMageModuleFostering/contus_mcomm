@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_ApplyCoupon>
+			<version>0.1.0.0</version>
+		</ContusRestapi_ApplyCoupon>
+	</modules>
+	<global>
+		<models>
+			<applyCoupon>
+				<class>ContusRestapi_ApplyCoupon_Model</class>
+			</applyCoupon>
+		</models>
+	</global>
+</config>

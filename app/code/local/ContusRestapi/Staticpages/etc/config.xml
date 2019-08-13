@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_Staticpages>
+			<version>0.1.0.0</version>
+		</ContusRestapi_Staticpages>
+	</modules>
+	<global>
+		<models>
+			<staticpages>
+				<class>ContusRestapi_Staticpages_Model</class>
+			</staticpages>
+		</models>
+	</global>
+</config>

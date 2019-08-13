@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Contus_Pushnoteproducts>
+            <version>0.1.0</version>
+        </Contus_Pushnoteproducts>
+    </modules>
+    <frontend>
+        <routers>
+            <pushnoteproducts>
+                <use>standard</use>
+                <args>
+                    <module>Contus_Pushnoteproducts</module>
+                    <frontName>pushnoteproducts</frontName>
+                </args>
+            </pushnoteproducts>
+        </routers>
+        <layout>
+            <updates>
+                <pushnoteproducts>
+                    <file>pushnoteproducts.xml</file>
+                </pushnoteproducts>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<pushnoteproducts>
+				<use>admin</use>
+				<args>
+					<module>Contus_Pushnoteproducts</module>
+					<frontName>pushnoteproducts</frontName>
+				</args>
+			</pushnoteproducts>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<pushnoteproducts module="pushnoteproducts">
+				<title>MCOMM App</title>
+				<sort_order>100</sort_order> 
+				<children>
+				<pushnoteproducts>       
+				<title>Push Notification</title>     
+				<children>
+					<items module="pushnoteproducts">
+						<title>Products</title>
+						<sort_order>0</sort_order>
+						<action>pushnoteproducts/adminhtml_pushnoteproducts</action>
+					</items>
+				</children>
+				</pushnoteproducts>  
+				</children>
+			</pushnoteproducts>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Contus_Pushnoteproducts>
+							<title>Pushnoteproducts Module</title>
+							<sort_order>10</sort_order>
+						</Contus_Pushnoteproducts>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<pushnoteproducts>
+					<file>pushnoteproducts.xml</file>
+				</pushnoteproducts>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <pushnoteproducts>
+                <class>Contus_Pushnoteproducts_Model</class>
+                <resourceModel>pushnoteproducts_mysql4</resourceModel>
+            </pushnoteproducts>
+           
+        </models>
+      
+        <blocks>
+            <pushnoteproducts>
+                <class>Contus_Pushnoteproducts_Block</class>
+            </pushnoteproducts>
+        </blocks>
+        <helpers>
+            <pushnoteproducts>
+                <class>Contus_Pushnoteproducts_Helper</class>
+            </pushnoteproducts>
+        </helpers>
+    </global>
+</config>

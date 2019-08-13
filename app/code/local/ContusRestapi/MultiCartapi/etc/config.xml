@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_MultiCartapi>
+			<version>0.1.0.0</version>
+		</ContusRestapi_MultiCartapi>
+	</modules>
+	<global>
+		<models>
+			<multiCartapi>
+				<class>ContusRestapi_MultiCartapi_Model</class>
+			</multiCartapi>
+		</models>
+	</global>
+</config>

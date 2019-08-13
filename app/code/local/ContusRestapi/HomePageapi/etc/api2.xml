@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="HomePageapi">
+				<title>Home Page API Module</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<homePageapi translate="title" module="HomePageapi">
+				<group>contusrestapi</group>
+				<model>homePageapi/api2_homePageapi</model>
+				<title>Home api</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>websiteid</website_id>
+					<store_id>Associate to Store</store_id>
+					<image_size>Image resize size</image_size>
+					<result>Result</result>
+					<offer_products>Offer Products</offer_products>
+					<categories>Categories</categories>
+					<new_products>New Arrivals</new_products>
+					<available_stores>Stores</available_stores>
+					<offer_id>Offer Id</offer_id>
+					<customer_id>Customer Id</customer_id>
+					<results>Results</results>
+					<success>Success</success>
+					<total_count>Total products</total_count>
+					<error>Error</error>
+					<Offer_title>Offer Title</Offer_title>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/homepage/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					<offer_products>
+						<route>/offer_products/</route>
+						<action_type>entity</action_type>
+					</offer_products>
+				</routes>
+				<versions>1</versions>
+			</homePageapi>
+
+		</resources>
+	</api2>
+</config>

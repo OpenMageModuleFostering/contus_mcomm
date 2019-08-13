@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_ReviewRating>
+			<version>0.1.0.0</version>
+		</ContusRestapi_ReviewRating>
+	</modules>
+	<global>
+		<models>
+			<reviewRating>
+				<class>ContusRestapi_ReviewRating_Model</class>
+			</reviewRating>
+		</models>
+	</global>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_AddressBook>
+			<version>0.1.0.0</version>
+		</ContusRestapi_AddressBook>
+	</modules>
+	<global>
+		<models>
+			<addressBook>
+				<class>ContusRestapi_AddressBook_Model</class>
+			</addressBook>
+		</models>
+	</global>
+</config>

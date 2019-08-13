@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_HomePageapi>
+			<version>0.1.0.0</version>
+		</ContusRestapi_HomePageapi>
+	</modules>
+	<global>
+		<models>
+			<homePageapi>
+				<class>ContusRestapi_HomePageapi_Model</class>
+			</homePageapi>
+		</models>
+	</global>
+</config>

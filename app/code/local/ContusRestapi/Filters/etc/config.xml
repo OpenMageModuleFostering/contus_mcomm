@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_Filters>
+			<version>0.1.0.0</version>
+		</ContusRestapi_Filters>
+	</modules>
+	<global>
+		<models>
+			<filters>
+				<class>ContusRestapi_Filters_Model</class>
+			</filters>
+		</models>
+	</global>
+</config>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="ReviewRating">
+				<title>Reviews and Ratings</title>
+				<sort_order>14</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<reviewRating translate="title" module="ReviewRating">
+				<group>contusrestapi</group>
+				<model>reviewRating/api2_reviewRating</model>
+				<title>Reviews and Ratings</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>websiteid</website_id>
+					<store_id>Associate to Store</store_id>
+					<customer_id>Customer Id</customer_id>
+					<customer_name>Customer Name</customer_name>
+					<product_id>Product Id</product_id>
+					<review_title>Review Title</review_title>
+					<review_description>Review Description</review_description>
+					<review_status>Review Status</review_status>
+					<rating>Rating count</rating>
+					<result>All Reviews</result>
+					<summary_rating>Over all Rating</summary_rating>
+					<success>Code</success>
+					<message>Message</message>
+					<token>Token</token>
+					<total_reviews_count>Total Reviews Count</total_reviews_count>
+					<reviews>Reviews</reviews>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/add/reviews/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					<reviews_collection>
+                        <route>/reviews/list/</route> 
+                        <action_type>collection</action_type> 
+                    </reviews_collection>
+				</routes>
+				<versions>1</versions>
+			</reviewRating>
+
+		</resources>
+	</api2>
+</config>

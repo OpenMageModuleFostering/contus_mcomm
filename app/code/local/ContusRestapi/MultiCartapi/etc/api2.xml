@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="MultiCartapi">
+				<title>Multi Cartapi</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<multiCartapi translate="title" module="MultiCartapi">
+				<group>contusrestapi</group>
+				<model>multiCartapi/api2_multiCartapi</model>
+				<title>Add Multiple products to Cart</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>Website id</website_id>
+					<store_id>Store Id</store_id>
+					<customer_id>customer Id</customer_id>
+					<product_id>product Id</product_id>
+					<quote_id>quote Id</quote_id>
+					<qty>qty</qty>
+					<super_attribute>super_attribute</super_attribute>
+					<custom_option>Custom Option</custom_option>
+					<links>Links</links>
+					<currencyCode>Currency code</currencyCode>
+					<result>Result</result>
+					<success>success</success>
+					<message>message</message>
+					<token>Token</token>
+					<isValidToken>Is Valid Token</isValidToken>
+					<items>Item</items>
+					<item_count>Item Count</item_count>
+					<items_qty>Item Qty</items_qty>
+					<grand_total>Grand Total</grand_total>
+					<subtotal>SubTotal</subtotal>
+					<discount>Discount</discount>
+					<coupon_code>Coupon Code</coupon_code>
+					<shipping_amount>Shipping Amount</shipping_amount>
+					<address>Address</address>
+					<tax>Tax</tax>
+					<detail>Detail</detail>
+					<errors>Errors</errors>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/cart/bulk_add</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					<!-- Cart products collection -->
+
+					<cart_delete>
+						<route>/cart/bulk_delete/links/:links/super_attribute/:super_attribute/custom_option/:custom_option/quote_id/:quote_id/product_id/:product_id/customer_id/:customer_id/store_id/:store_id/website_id/:website_id/token/:token
+						</route> <!-- qid = quote_id, pid = product_id -->
+						<action_type>entity</action_type>
+					</cart_delete>
+
+					<cart_update>
+						<route>/cart/bulk_update/</route>
+						<action_type>entity</action_type>
+					</cart_update>
+
+				</routes>
+				<versions>1</versions>
+			</multiCartapi>
+
+		</resources>
+	</api2>
+</config>

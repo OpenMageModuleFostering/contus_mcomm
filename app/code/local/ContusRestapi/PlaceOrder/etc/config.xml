@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_PlaceOrder>
+			<version>0.1.0.0</version>
+		</ContusRestapi_PlaceOrder>
+	</modules>
+	<global>
+		<models>
+			<placeOrder>
+				<class>ContusRestapi_PlaceOrder_Model</class>
+			</placeOrder>
+		</models>
+	</global>
+</config>

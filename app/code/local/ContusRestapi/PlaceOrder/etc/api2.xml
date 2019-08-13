@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="PlaceOrder">
+				<title>Place Order API Module</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<placeOrder translate="title" module="PlaceOrder">
+				<group>contusrestapi</group>
+				<model>placeOrder/api2_placeOrderapi</model>
+				<title>Cart Address</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>websiteid</website_id>
+					<store_id>Associate to Store</store_id>
+					<quote_id>Shopping cart Id</quote_id>
+					<customer_id>Customer Id</customer_id>
+					<payment_method>Payment Method</payment_method>
+					<shipping_method>Shipping Method</shipping_method>
+					<token> Token </token>
+                    <success>success</success>
+                    <message>message</message>
+                    <order_id>Order Id</order_id>
+                    <payment_url>Payment Url</payment_url>
+				</attributes>
+				<routes>
+				<!-- Place order using Knet -->
+				<route_collection>
+						<route>/paypal_standard/place_order/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					<!-- Place order using Cash on delivery -->
+				<place_order>
+                        <route>/place_order/</route>
+                        <action_type>collection</action_type>
+                    </place_order>
+					
+				</routes>
+				<versions>1</versions>
+			</placeOrder>
+
+		</resources>
+	</api2>
+</config>

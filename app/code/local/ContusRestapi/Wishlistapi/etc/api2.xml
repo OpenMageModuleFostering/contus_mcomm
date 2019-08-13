@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="Wishlistapi">
+				<title>Wishlist Products</title>
+				<sort_order>14</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<wishlistapi translate="title" module="Wishlistapi">
+				<group>contusrestapi</group>
+				<model>wishlistapi/api2_wishlist</model>
+				<title>Wishlist Products</title>
+				<sort_order>18</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+						<update>1</update>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>websiteid</website_id>
+					<store_id>Associate to Store</store_id>
+					<customer_id>Customer Id</customer_id>
+					<customer_name>Customer Name</customer_name>
+					<product_id>Product Id</product_id>
+					<wishlist>Wishlist</wishlist>
+					<wishlist_action>Wishlist Action</wishlist_action>
+					<success>Success</success>
+					<result>All Reviews</result>
+					<ratings>Over all Rating</ratings>
+					<token>Token</token>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/wishlist/add/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					<!-- Wishlist products collection -->
+					<wishlist_collection>
+						<route>/wishlist/productlist/</route>
+						<action_type>collection</action_type> <!-- This will call _retrieveCollection function -->
+						<!--<action_type>entity</action_type> --> <!-- This will call _retrieve function -->
+					</wishlist_collection>
+
+					<wishlist_delete>
+						<route>/wishlist/delete/token/:token/product_id/:product_id/customer_id/:customer_id/store_id/:store_id/website_id/:website_id
+						</route> <!-- qid = quote_id, pid = product_id -->
+						<action_type>entity</action_type>
+					</wishlist_delete>
+					<wishlist_clear>
+                        <route>/wishlist/clear/</route> 
+                        <action_type>entity</action_type>
+                    </wishlist_clear>
+				</routes>
+				<versions>1</versions>
+			</wishlistapi>
+
+		</resources>
+	</api2>
+</config>

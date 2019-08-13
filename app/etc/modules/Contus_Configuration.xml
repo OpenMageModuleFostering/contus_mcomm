@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Contus_Configuration>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Contus_Configuration>
+    </modules>
+</config> 

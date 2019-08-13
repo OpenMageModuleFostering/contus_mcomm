@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_ProductList>
+			<version>0.0.1</version>
+		</ContusRestapi_ProductList>
+	</modules>
+	<global>
+	   <models>
+			<catalog>
+                <rewrite>
+                    <api2_product_rest>ContusRestapi_ProductList_Model_Api2_ProductList_Rest</api2_product_rest>   
+                    <api2_product_rest_guest_v1>ContusRestapi_ProductList_Model_Api2_ProductList_Rest_Guest_V1</api2_product_rest_guest_v1>
+               	    <api2_product_rest_admin_v1>ContusRestapi_ProductList_Model_Api2_ProductList_Rest_Admin_V1</api2_product_rest_admin_v1>
+               	
+                </rewrite>
+            </catalog>
+	
+			<productList>
+				<class>ContusRestapi_ProductList_Model</class>
+			</productList>
+		</models>
+	</global>
+</config>

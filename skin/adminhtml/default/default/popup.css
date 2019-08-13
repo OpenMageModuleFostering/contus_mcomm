@@ -1,0 +1,54 @@
+
+.simplemodal-overlay {
+	background: #000;
+}
+
+.simplemodal-container {
+	left: 0 !important;
+	width: 80% !important;
+}
+
+.simplemodal-wrap {
+	width: 20% !important;
+	margin: 0 auto;
+}
+
+.pop-up {
+	background: #FFF;
+	padding: 15PX;
+	width: 500px !important;
+}
+
+.pop-up input, .pop-up textarea{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #AAA #C8C8C8 #C8C8C8 #AAA;
+    background: none repeat scroll 0% 0% #FFF;
+    font: 12px arial,helvetica,sans-serif;
+    display: block;
+    width: 98%;
+    padding: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.pop-up input[type="text"]:disabled {
+    background: #dddddd;
+}
+
+.pop-up input.cancel {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ED6502 #A04300 #A04300 #ED6502;
+    padding: 0px 7px 2px;
+
+    background: url(images/btn_bg.gif) repeat-x scroll 0px 100% #FFAC47;
+    color: #FFF;
+    font: bold 12px arial,helvetica,sans-serif;
+    cursor: pointer;
+    text-align: center !important;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;}

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_SearchProducts>
+			<active>true</active>
+			<codePool>local</codePool>
+		</ContusRestapi_SearchProducts>
+	</modules>
+</config> 

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<tabs>
+		<contus translate="label" module="configuration">
+			<label>MCOMM App Configuration</label>
+			<sort_order>1500</sort_order>
+		</contus>
+	</tabs>
+	<sections>
+		<contus translate="label" module="configuration">
+			<label>MCOMM App Configuration</label>
+			<tab>contus</tab>
+			<sort_order>1200</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+
+			<groups>
+
+				<info translate="label">
+					<label>Information</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<support_information>
+							<frontend_model>configuration/adminhtml_about
+							</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</support_information>
+					</fields>
+					<expanded>1</expanded>
+				</info>
+
+				<mcomapp_about translate="label">
+					<label>MCOMM App</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<expanded>1</expanded>
+
+					<fields>
+						<rest_apikey translate="label">
+							<label>Rest Key</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+
+							<comment><![CDATA[<a href="http://inchoo.net/magento/configure-magento-rest-and-oauth-settings/" target="_blank">How to create key?</a>]]></comment>
+						</rest_apikey>
+
+						<rest_secretkey translate="label">
+							<label>Rest Secret </label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+
+							<comment><![CDATA[<a href="http://inchoo.net/magento/configure-magento-rest-and-oauth-settings/" target="_blank">How to create secret key?</a>]]></comment>
+						</rest_secretkey>
+					</fields>
+				</mcomapp_about>
+
+				<configuration_pushnotifications
+					translate="label">
+					<label>Push Notifications</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+
+						<gcm_apikey translate="label">
+							<label>GCM Application Key</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+
+							<comment><![CDATA[<a href="https://code.google.com/apis/console" target="_blank">How to create GCM key?</a>]]></comment>
+						</gcm_apikey>
+
+						<product_pushnotification_enabled
+							translate="label">
+							<label>Push Notification for Product</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_enabledisable
+							</source_model>
+							<comment><![CDATA[Send push notification for each products manually.]]></comment>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</product_pushnotification_enabled>
+
+						<order_pushnotification_enabled
+							translate="label">
+							<label>Push Notification for Order</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_enabledisable
+							</source_model>
+							<comment><![CDATA[Send push notification for each orders manually.]]></comment>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_pushnotification_enabled>
+
+					</fields>
+					<expanded>1</expanded>
+				</configuration_pushnotifications>
+
+				<configuration_home translate="label" module="configuration">
+					<label>Home Page Banner</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>100</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+
+					<fields>
+						<home_banner translate="label">
+							<label>Home Banner</label>
+							<frontend_type>select</frontend_type>
+							<source_model>configuration/adminhtml_homelist</source_model>
+							<comment><![CDATA[
+                        New arrivals - Display products on banner based on the date.<br/>
+                        Best Sellers - Display most sold products.<br/>
+                        Offers - Display offers from offer module .
+                     ]]></comment>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</home_banner>
+						<banner_count translate="label">
+							<label>Home Banner Slider Count</label>
+							<frontend_type>select</frontend_type>
+							<source_model>configuration/adminhtml_count</source_model>
+							<comment><![CDATA[
+                             Its affect on home page slider. If you select 5, 5 sliders will be display on home page. 
+                     ]]></comment>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</banner_count>
+					</fields>
+				</configuration_home>
+			</groups>
+		</contus>
+	</sections>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_SocialLogin>
+			<version>0.1.0.0</version>
+		</ContusRestapi_SocialLogin>
+	</modules>
+	<global>
+		<models>
+			<socialLogin>
+				<class>ContusRestapi_SocialLogin_Model</class>
+			</socialLogin>
+		</models>
+	</global>
+</config>
