@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_Contactus>
+			<version>0.1.0.0</version>
+		</ContusRestapi_Contactus>
+	</modules>
+	<global>
+		<models>
+			<contactus>
+				<class>ContusRestapi_Contactus_Model</class>
+			</contactus>
+		</models>
+	</global>
+</config>

@@ -79,7 +79,7 @@
 						<route>/cart/bulk_update/</route>
 						<action_type>entity</action_type>
 					</cart_update>
-
+					
 				</routes>
 				<versions>1</versions>
 			</multiCartapi>

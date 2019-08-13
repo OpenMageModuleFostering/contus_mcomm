@@ -85,7 +85,7 @@ class ContusRestapi_SocialLogin_Model_Api2_SocialLogin extends Mage_Api2_Model_R
                 
                 $response [static::RESULT] = Mage::getModel ( static::LOGIN_TOKEN )->getCustomerDetail ( $customer->getId () );
                 $response [static::RESULT] ['token'] = $this->getToken ( $customer->getId () );
-                $result [static::RESULT] ['cart_count'] = Mage::getModel ( static::LOGIN_TOKEN )->getCartCount ( $customer->getId (), $storeId );
+                $response [static::RESULT] ['cart_count'] = Mage::getModel ( static::LOGIN_TOKEN )->getCartCount ( $customer->getId (), $storeId );
                 // Update device token and type in token table
                 Mage::getModel ( 'login/methods_functions' )->updateDeviceToken ( $customer->getId (), $deviceToken, $deviceType );
                 
@@ -117,7 +117,7 @@ class ContusRestapi_SocialLogin_Model_Api2_SocialLogin extends Mage_Api2_Model_R
                 
                 $response [static::RESULT] = Mage::getModel ( static::LOGIN_TOKEN )->getCustomerDetail ( $customerData [static::ENTITY_ID] );
                 $response [static::RESULT] ['token'] = $this->getToken ( $customer->getId () );
-                $result [static::RESULT] ['cart_count'] = Mage::getModel ( static::LOGIN_TOKEN )->getCartCount ( $customerData [static::ENTITY_ID], $storeId );
+                $response [static::RESULT] ['cart_count'] = Mage::getModel ( static::LOGIN_TOKEN )->getCartCount ( $customerData [static::ENTITY_ID], $storeId );
                 // Update device token and type in token table
                 Mage::getModel ( 'login/methods_functions' )->updateDeviceToken ( $customerData [static::ENTITY_ID], $deviceToken, $deviceType );
                 

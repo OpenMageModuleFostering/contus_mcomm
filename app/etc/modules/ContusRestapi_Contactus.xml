@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_Contactus>
+			<active>true</active>
+			<codePool>local</codePool>
+		</ContusRestapi_Contactus>
+	</modules>
+</config>

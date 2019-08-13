@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+	<api2>
+		<resource_groups>
+			<contusRestapi translate="title" module="Products">
+				<title>Pproduct Module</title>
+				<sort_order>10</sort_order>
+			</contusRestapi>
+		</resource_groups>
+		<resources>
+			<products translate="title" module="Products">
+				<group>contusrestapi</group>
+				<model>products/api2_products</model>
+				<title>Splash api</title>
+				<sort_order>10</sort_order>
+				<privileges>
+					<admin>
+						<create>1</create>
+						<retrieve>1</retrieve>
+						<delete>1</delete>
+					</admin>
+					<customer>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</customer>
+					<guest>
+						<create>1</create>
+						<retrieve>1</retrieve>
+					</guest>
+				</privileges>
+				<attributes module="api2">
+					<website_id>websiteid</website_id>
+					<store_id>Associate to Store</store_id>				
+					<results>Results</results>
+					<success>Success</success>
+					<error>Error</error>
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/productlist/</route>
+						<action_type>collection</action_type>
+					</route_collection>
+					
+				</routes>
+				<versions>1</versions>
+			</products>
+
+		</resources>
+	</api2>
+</config>

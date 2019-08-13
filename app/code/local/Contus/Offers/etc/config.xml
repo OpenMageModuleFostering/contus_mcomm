@@ -69,7 +69,7 @@
                 <class>Contus_Offers_Model_Mysql4</class>
                 <entities>
                     <offers>
-                        <table>offers</table>
+                        <table>mcomm_offers</table>
                     </offers>
                 </entities>
             </offers_mysql4>

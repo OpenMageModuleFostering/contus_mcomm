@@ -60,6 +60,7 @@
 					<fax>Fax</fax>
 					<result>Result</result>
 					<token>Token</token>
+					<order_id>Order Id</order_id>
 				</attributes>
 
 				<routes>
@@ -74,6 +75,12 @@
 						<route>/myorders/</route>
 						<action_type>collection</action_type>
 					</order_collection>
+					
+					<!-- Reorder -->
+					<reorder>
+						<route>/reorder/</route>
+						<action_type>entity</action_type>
+					</reorder>
 					
 						<!-- Downloadable Products collection -->
 					<downloadable_collection>

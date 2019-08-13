@@ -25,6 +25,37 @@
  */
 ?>
 
+<!-- 
+<p class="switcher">
+	<label for="store_switcher">Choose Store View:</label> 
+	<select	name="store_switcher" id="store_switcher">
+		<option value="0">All Store Views</option>
+        <?php 
+         foreach ( Mage::app ()->getWebsites () as $website ) {    ?> 
+            <optgroup label=<?php echo $website->getName();?>></optgroup>
+            <?php 
+             foreach ( $website->getGroups () as $group ) {                ?>   
+                <optgroup label="&nbsp;&nbsp;&nbsp;"<?php echo $group->getName();?>>
+                <?php 
+                $stores = $group->getStores ();
+                foreach ( $stores as $store ) {?>
+                        <option value=<?php echo $store->getId ()?>>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $store->getName ()?>
+		                </option>
+               <?php    }?>
+               </optgroup>
+      
+             <?php    }
+            }
+       ?>
+ 
+        </select>
+
+</p>
+ -->
+
+
+
+<?php echo $this->getChildHtml('store_switcher');?>
 <?php
 /* Added simplemodal js for showing iframe code in a pop-up - contus groupclone manage deals grid */
 $mainjsUrl = Mage::getBaseUrl ( Mage_Core_Model_Store::URL_TYPE_JS ) . 'iframe/jquery-2.1.1.min.js';
@@ -47,7 +78,9 @@ $baseUrl = Mage::getBaseUrl ();
 		method="post">
 		<label>Enter your message to push</label> <span class="required">*</span><br />
 		<textarea rows="5" cols="10" id="product_name" name="product_name"></textarea>
-		<input type="hidden" id="product_id" name="product_id"></input> <input
+		<input type="hidden" id="product_id" name="product_id"></input>
+		<input type="hidden" id="store_id" name="store_id"></input> 
+		 <input
 			name="form_key" type="hidden"
 			value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
 		<button type="submit" onclick="productMsgValidation()">Push</button>
@@ -62,6 +95,10 @@ jQuery(document).ready(function(){
 	
 	jQuery(".PushnoteProducts").click(function(){
 
+		var store_switcher = document.getElementById("store_switcher");
+		var store_id = store_switcher.options[store_switcher.selectedIndex].value;
+		jQuery("#store_id").val(store_id);
+     //  alert(store_id);
 		var inputIframe = jQuery(this).attr("id");
 		var inputName = jQuery(this).attr("name");
 		jQuery("#product_name").val(inputName);

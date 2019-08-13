@@ -44,6 +44,7 @@
 					<total_count>Total products</total_count>
 					<error>Error</error>
 					<Offer_title>Offer Title</Offer_title>
+					<city>City</city>
 				</attributes>
 				<routes>
 					<route_collection>

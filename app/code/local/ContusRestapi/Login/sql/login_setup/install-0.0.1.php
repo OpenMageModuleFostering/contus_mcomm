@@ -12,9 +12,9 @@
 
 $installer = $this;
 
-$installer->run ( "DROP TABLE IF EXISTS " . $installer->getTable ( 'login/token' ) );
+$installer->run ( "DROP TABLE IF EXISTS " . $installer->getTable ( 'mcomm_token' ) );
 
-$token = $installer->getConnection ()->newTable ( $installer->getTable ( 'login/token' ) )->addColumn ( 'tokenid', Varien_Db_Ddl_Table::TYPE_INTEGER, NULL, array (
+$token = $installer->getConnection ()->newTable ( $installer->getTable ( 'mcomm_token' ) )->addColumn ( 'tokenid', Varien_Db_Ddl_Table::TYPE_INTEGER, NULL, array (
         'unsigned' => TRUE,
         'identity' => TRUE,
         'nullable' => FALSE,

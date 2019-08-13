@@ -34,28 +34,35 @@
 					<quote_id>Shopping cart Id</quote_id>
 					<billing_address_id>Billing Address Id</billing_address_id>
 					<shipping_address_id>Shipping Address Id</shipping_address_id>
-					 <address_type>address_type</address_type>
-                    <same_for_shipping>same_for_shipping</same_for_shipping>
-                    <first_name>first_name</first_name>
-                    <last_name>last_name</last_name>
-                    <address1>address1</address1>
-                    <city>city</city>
-                    <state>state</state>
-                    <zip>zip</zip>
-                    <country>country</country>
-                    <telephone>telephone</telephone>
-                    <success>success</success>
-                    <message>message</message>
-                    <token>Token</token>
-                    <customer_id>Customer Id</customer_id>
+					<address_type>address_type</address_type>
+					<same_for_shipping>same_for_shipping</same_for_shipping>
+					<first_name>first_name</first_name>
+					<last_name>last_name</last_name>
+					<address1>address1</address1>
+					<city>city</city>
+					<state>state</state>
+					<zip>zip</zip>
+					<country>country</country>
+					<telephone>telephone</telephone>
+					<success>success</success>
+					<message>message</message>
+					<token>Token</token>
+					<customer_id>Customer Id</customer_id>
+					<error>Error</error>
+					<result>Result</result>
+					<modes>Modes</modes>
 				</attributes>
 				<routes>
-				
-				<address_add>
-                        <route>/cart_address/add/</route>
-                        <action_type>collection</action_type>
-                </address_add>
-					
+
+					<address_add>
+						<route>/cart_address/add/</route>
+						<action_type>collection</action_type>
+					</address_add>
+					<delivery_details>
+						<route>/delivery/info/</route>
+						<action_type>entity</action_type>
+					</delivery_details>
+
 				</routes>
 				<versions>1</versions>
 			</cartAddressapi>

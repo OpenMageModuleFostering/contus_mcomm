@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<ContusRestapi_SplashPage>
+			<version>0.1.0.0</version>
+		</ContusRestapi_SplashPage>
+	</modules>
+	<global>
+		<models>
+			<splashPage>
+				<class>ContusRestapi_SplashPage_Model</class>
+			</splashPage>
+		</models>
+	</global>
+</config>

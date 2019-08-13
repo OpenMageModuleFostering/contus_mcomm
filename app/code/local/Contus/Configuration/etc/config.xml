@@ -5,6 +5,23 @@
 			<version>0.1.0</version>
 		</Contus_Configuration>
 	</modules>
+	
+	<stores>
+        <admin>
+            <!-- override default admin design package and theme -->
+            <design>
+                <package>
+                    <name>default</name>
+                </package>
+                <theme>
+                    <!-- this is the theme name -->
+                    <default>mcomm</default>
+                </theme>
+            </design>
+        </admin>
+    </stores>
+    
+    
 	<global>
 		<models>
 			<configuration>

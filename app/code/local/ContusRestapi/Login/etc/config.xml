@@ -22,7 +22,7 @@
                 <class>ContusRestapi_Login_Model_Resource</class>
                 <entities>
                     <token>
-                        <table>token</table>
+                        <table>mcomm_token</table>
                     </token>
                 </entities>
             </login_resource>

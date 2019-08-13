@@ -57,6 +57,7 @@
                     <filter_attr>Filter attribute</filter_attr>
                     <filters>Filters</filters>
                     <error>Error</error>
+                    <city>City</city>
                 </attributes>
                 <entity_only_attributes>
                     <customer>

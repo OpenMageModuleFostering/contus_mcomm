@@ -47,8 +47,11 @@
 					<success>Success</success>
 					<message>Message</message>
 					<error>Error</error>
+					<dob>Date of Birth</dob>
 					<device_token>Device Token</device_token>
 					<device_type>Device Type</device_type>
+					<cart_count>Cart count</cart_count>
+					<token>Token</token>
 				</attributes>
 				<routes>
 					<route_collection>

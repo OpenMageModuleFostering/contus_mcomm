@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Contus
@@ -28,25 +27,27 @@
  * @since      1.0
  */
 class Contus_Configuration_Model_Config {
-    
-    /**
-     * Change push notification mode
-     * true - live mode
-     * false - development mode
-     * 
-     * @return boolean
-     */
-    public function getNotificationMode() {
-        $response = array ();
-        $notificationMode = false;
-        
-        if ($notificationMode) {
-            $pemfile = getcwd () . '/contus/Mcom_production.pem';
-        } else {
-            $pemfile = getcwd () . '/contus/Mcom_development.pem';
-        }
-        $response ['mode'] = $notificationMode;
-        $response ['pemfile'] = $pemfile;
-        return $response;
-    }
+   
+   /**
+    * Change push notification mode
+    * true - live mode
+    * false - development mode
+    *
+    * @return boolean
+    */
+   public function getNotificationMode() {
+      $response = array ();
+      $notificationMode = true;
+      
+      if ($notificationMode) {
+         $pemfile = getcwd () . '/contus/Mcom_production.pem';
+      } else {
+         $pemfile = getcwd () . '/contus/Mcom_development.pem';
+      }
+      $response ['mode'] = $notificationMode;
+      $response ['pemfile'] = $pemfile;
+      return $response;
+   }
+
+  
 }

@@ -40,6 +40,14 @@
                     <message>message</message>
                     <order_id>Order Id</order_id>
                     <payment_url>Payment Url</payment_url>
+                    <delivery_schedule_types>delivery_schedule_types</delivery_schedule_types>
+                    <shipping_delivery_time>shipping_delivery_time</shipping_delivery_time>
+                    <shipping_delivery_cost>shipping_delivery_cost</shipping_delivery_cost>
+                    <shipping_delivery_date>shipping_delivery_date</shipping_delivery_date>
+                    <shipping_delivery_comments>shipping_delivery_comments</shipping_delivery_comments>
+                    <delivery_time>Delivery Time</delivery_time>
+                    <surprise_gift>Surprise Gift</surprise_gift>
+                    <gift_message>gift_message</gift_message>
 				</attributes>
 				<routes>
 				<!-- Place order using Knet -->

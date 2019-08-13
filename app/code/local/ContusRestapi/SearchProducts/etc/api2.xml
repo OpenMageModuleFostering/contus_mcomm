@@ -39,13 +39,21 @@
 					<limit>Limit</limit>
 					<result>Search Result</result>
 					<count>Page Count</count>
-					<total_products>Total Products Count</total_products>
+					<total_count>Total Products Count</total_count>
+					<success>Success</success>
+					<error>Error</error>
+					 <city>City</city>
 				</attributes>
 				<routes>
 					<route_collection>
 						<route>/search/products/</route>
 						<action_type>collection</action_type>
 					</route_collection>
+					
+					<predictive_search>
+                        <route>/predictive/search/</route>
+                        <action_type>entity</action_type>
+                    </predictive_search>
 				</routes>
 				<versions>1</versions>
 			</searchProducts>

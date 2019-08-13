@@ -46,6 +46,20 @@ class Contus_Offers_Block_Adminhtml_Offers_Grid extends Mage_Adminhtml_Block_Wid
      */
     protected function _prepareCollection() {
         $collection = Mage::getModel ( 'offers/offers' )->getCollection ();
+        
+        $storeId = ( int ) Mage::app ()->getRequest ()->getParam ( 'store' );
+        
+        
+        if ($storeId) {
+           $collection->addFieldToFilter ( 'store_id', array (
+                 array (
+                       'regexp' =>  $storeId
+                 ),
+                 array (
+                       'eq' => '0'
+                 )
+           ) );
+        }
         $this->setCollection ( $collection );
         return parent::_prepareCollection ();
     }

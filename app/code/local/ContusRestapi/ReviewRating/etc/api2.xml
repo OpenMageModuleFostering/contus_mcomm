@@ -57,6 +57,10 @@
                         <route>/reviews/list/</route> 
                         <action_type>collection</action_type> 
                     </reviews_collection>
+                    <seller_reviews_collection>
+                        <route>/seller/reviews/list/</route> 
+                         <action_type>entity</action_type>
+                    </seller_reviews_collection>
 				</routes>
 				<versions>1</versions>
 			</reviewRating>

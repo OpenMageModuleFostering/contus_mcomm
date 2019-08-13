@@ -101,7 +101,7 @@ class Contus_Pushnoteorders_Adminhtml_PushnoteordersController extends Mage_Admi
         $db_read = Mage::getSingleton ( 'core/resource' )->getConnection ( 'core_read' );
         // get the table preix value
         $prefix = Mage::getConfig ()->getTablePrefix ();
-        $userDetails = $db_read->fetchAll ( "SELECT devicetoken FROM  " . $prefix . "token WHERE devicetype='android' and userid=" . $customer_id );
+        $userDetails = $db_read->fetchAll ( "SELECT devicetoken FROM  " . $prefix . "mcomm_token WHERE devicetype='android' and userid=" . $customer_id );
         
         foreach ( $userDetails as $users ) {
             // get the device token from the database
@@ -159,7 +159,7 @@ class Contus_Pushnoteorders_Adminhtml_PushnoteordersController extends Mage_Admi
         $db_read = Mage::getSingleton ( 'core/resource' )->getConnection ( 'core_read' );
         // get the table preix value
         $prefix = Mage::getConfig ()->getTablePrefix ();
-        $userDetails = $db_read->fetchAll ( "SELECT devicetoken FROM  " . $prefix . "token WHERE devicetype='iphone' and userid=" . $customer_id );
+        $userDetails = $db_read->fetchAll ( "SELECT devicetoken FROM  " . $prefix . "mcomm_token WHERE devicetype='iphone' and userid=" . $customer_id );
         foreach ( $userDetails as $users ) {
             // get the device token from database
             $registration_ids [] = $users ['devicetoken'];
@@ -178,9 +178,9 @@ class Contus_Pushnoteorders_Adminhtml_PushnoteordersController extends Mage_Admi
             $fp = stream_socket_client ( 'ssl://gateway.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT | STREAM_CLIENT_PERSISTENT, $ctx );
         }
         if (! $fp)
-            echo ("Failed to connect: $err $errstr" . PHP_EOL);
+            $connetionStatus = ("Failed to connect: $err $errstr" . PHP_EOL);
         else
-            echo 'Connected to APNS' . PHP_EOL;
+            $connetionStatus = 'Connected to APNS' . PHP_EOL;
             
             // Create the payload body
         $body ['aps'] = array (
@@ -201,11 +201,11 @@ class Contus_Pushnoteorders_Adminhtml_PushnoteordersController extends Mage_Admi
             $result = fwrite ( $fp, $msg, strlen ( $msg ) );
             
             if (! $result)
-                echo 'Message not delivered' . PHP_EOL;
+                $deliverStatus =  'Message not delivered' . PHP_EOL;
             else
-                echo 'Message successfully delivered->' . $message ['msg'] . PHP_EOL;
+                $deliverStatus =  'Message successfully delivered->' . $message ['msg'] . PHP_EOL;
             
-            print_r ( $message );
+          //  print_r ( $message );
         }
         // Close the connection to the server
         fclose ( $fp );

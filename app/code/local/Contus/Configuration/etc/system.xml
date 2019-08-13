@@ -40,7 +40,7 @@
 				<mcomapp_about translate="label">
 					<label>MCOMM App</label>
 					<frontend_type>text</frontend_type>
-					<sort_order>1</sort_order>
+					<sort_order>2</sort_order>
 					<show_in_default>1</show_in_default>
 					<show_in_website>1</show_in_website>
 					<show_in_store>1</show_in_store>
@@ -77,7 +77,7 @@
 					translate="label">
 					<label>Push Notifications</label>
 					<frontend_type>text</frontend_type>
-					<sort_order>2</sort_order>
+					<sort_order>3</sort_order>
 					<show_in_default>1</show_in_default>
 					<show_in_website>1</show_in_website>
 					<show_in_store>1</show_in_store>
@@ -124,14 +124,14 @@
 					<expanded>1</expanded>
 				</configuration_pushnotifications>
 
-				<configuration_home translate="label" module="configuration">
+				<!-- <configuration_home translate="label" module="configuration">
 					<label>Home Page Banner</label>
 					<frontend_type>text</frontend_type>
-					<sort_order>100</sort_order>
+					<sort_order>4</sort_order>
 					<show_in_default>1</show_in_default>
 					<show_in_website>1</show_in_website>
 					<show_in_store>1</show_in_store>
-
+					<expanded>1</expanded>
 					<fields>
 						<home_banner translate="label">
 							<label>Home Banner</label>
@@ -160,7 +160,81 @@
 							<show_in_store>1</show_in_store>
 						</banner_count>
 					</fields>
-				</configuration_home>
+				</configuration_home> -->
+
+
+				<configuration_cms translate="label" module="configuration">
+					<label>CMS Pages</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>5</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<expanded>1</expanded>
+					<fields>
+
+						<cms_pages_enabled translate="label">
+							<label>CMS Pages </label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_enabledisable
+							</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</cms_pages_enabled>
+						<about_us translate="label">
+							<label>About Us Page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>configuration/adminhtml_cmspages</source_model>
+
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</about_us>
+						<contact_us translate="label">
+							<label>Contact Us Page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>configuration/adminhtml_cmspages</source_model>
+
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</contact_us>
+						<terms_condition translate="label">
+							<label>Term  Condition Page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>configuration/adminhtml_cmspages</source_model>
+
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</terms_condition>
+						<privacy_policy translate="label">
+							<label>Privacy Policy Page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>configuration/adminhtml_cmspages</source_model>
+
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</privacy_policy>
+						<customer_service translate="label">
+							<label>Customer Service Page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>configuration/adminhtml_cmspages</source_model>
+
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</customer_service>
+					</fields>
+				</configuration_cms>
 			</groups>
 		</contus>
 	</sections>

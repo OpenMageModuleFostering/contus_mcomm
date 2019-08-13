@@ -147,14 +147,14 @@ if (strcmp ( $res, "VERIFIED" ) == 0) {
  */
 
 // Check Number 1 ------------------------------------------------------------------------------------------------------------
-$receiver_email = $_POST ['receiver_email'];
+/* $receiver_email = $_POST ['receiver_email'];
 if ($receiver_email != "subhasini@contus.in") {
     fwrite ( $fh, 'business email returned is not  your business email' );
     $verified = false;
     // handle the wrong business url
 } else {
     $verified = true;
-}
+} */
 
 // Check number 2 ------------------------------------------------------------------------------------------------------------
 $order = Mage::getModel ( 'sales/order' )->loadByIncrementId ( $order_id );

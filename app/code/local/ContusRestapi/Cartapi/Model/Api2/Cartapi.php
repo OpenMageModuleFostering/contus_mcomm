@@ -110,7 +110,7 @@ class ContusRestapi_Cartapi_Model_Api2_Cartapi extends Mage_Api2_Model_Resource 
             $error = $this->addToCart ( $product, $quote, $qty, $data );
         }
         
-        if (is_string ( $error ) || $quote == 0) {
+        if (is_string ( $error ) || empty($quote)) {
             $message = ($quote) ? $error : 'Customer not found.';
             $error_flag = false;
             $success = 0;

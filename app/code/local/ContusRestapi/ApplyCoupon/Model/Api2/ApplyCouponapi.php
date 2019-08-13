@@ -176,7 +176,7 @@ class ContusRestapi_ApplyCoupon_Model_Api2_ApplyCouponapi extends Mage_Api2_Mode
             try {
                 $quote->setData ( static::COUPON_CODE, '' )->collectTotals ()->save ();
                 $success = 1;
-                $message = 'Coupon code was canceled.';
+                $message = 'Coupon code was revoked.';
                 $cartproducts = $this->getCartAmountDetails ( array (
                         static::STOREID => $storeId,
                         static::CUSTOMER_ID => $customerId 

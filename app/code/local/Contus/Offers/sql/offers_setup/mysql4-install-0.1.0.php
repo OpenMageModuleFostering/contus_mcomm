@@ -36,11 +36,12 @@ $installer->startSetup ();
 
 $installer->run ( "
 
--- DROP TABLE IF EXISTS {$this->getTable('offers')};
-CREATE TABLE {$this->getTable('offers')} (
+-- DROP TABLE IF EXISTS {$this->getTable('mcomm_offers')};
+CREATE TABLE {$this->getTable('mcomm_offers')} (
   `offers_id` int(11) unsigned NOT NULL auto_increment,
   `offer_title` varchar(255) NOT NULL default '',
   `offer_img` varchar(255) NOT NULL default '',
+  `store_id` varchar( 100 ) DEFAULT NULL,
   `from_date` date DEFAULT NULL,
   `to_date` date DEFAULT NULL,
   `offer_products` varchar(255) NOT NULL default '',
@@ -51,5 +52,6 @@ CREATE TABLE {$this->getTable('offers')} (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
     " );
+
 
 $installer->endSetup ();  

@@ -11,5 +11,16 @@
 				<class>ContusRestapi_PlaceOrder_Model</class>
 			</placeOrder>
 		</models>
+		
+		<!--  <sales>
+            <quote>
+                <totals>
+                    <placeOrder>
+                        <class>placeOrder/sales_quote_address_total_deliverycost</class>
+                    </placeOrder>
+                </totals>
+            </quote>
+      </sales> -->
+     
 	</global>
 </config>

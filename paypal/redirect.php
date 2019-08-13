@@ -18,7 +18,7 @@ $order = Mage::getModel('sales/order')->loadByIncrementId($order_Id);
 
 $orderId = $order->getIncrementId ();
 
-$result = $order->getAllItems ();
+$result = $order->getAllVisibleItems ();
 
   $currency_code = $order ['base_currency_code'];
 
@@ -27,8 +27,10 @@ $weight = round ( $order ['Weight'], 2 );
 $ship_method = $order ['Shipping_description'];
 $tax = trim ( round ( $order ['tax_amount'], 2 ) );
 $discountAmount = $order ['discount_amount'];
-
- number_format($discountAmount, 2, '.', '');
+ $discountAmount = number_format($discountAmount, 2, '.', ''); 
+ if($discountAmount){
+     $discountAmount = $discountAmount *(-1);
+ }
  $amount = round ( $order ['grand_total'], 2 );
 
 $customerid = $order ['customer_id'];
@@ -110,7 +112,6 @@ $redirecturl = $baseUrl . "paypal/";
 		<input	id="amount" name="amount" value="<?php echo $amount;?>" type="hidden" />
 		<input id="tax" name="tax" value="<?php echo number_format($tax, 2, '.', '');?>" type="hidden" /> 
 		<input id="shipping1" name="shipping1"	value="<?php echo sprintf("%.2f", $shipping);?>" type="hidden" /> 
-		<input id="discount_amount" name="discount_amount" value="<?php echo number_format($discountAmount, 2, '.', '');?>" type="hidden" />
 		
 		
          <input type="hidden" name="rm" value="2">
@@ -129,7 +130,7 @@ foreach ($result as $key => $item) { ?>
 <?php } //exit;?>
 
          <input id="shipping_1" name="shipping_1"	value="<?php echo sprintf("%.2f", $shipping);?>" type="hidden" /> 
-         <input id="discount_amount" name="discount_amount" value="<?php echo number_format($discountAmount, 2, '.', '');?>" type="hidden" />
+        
 		<input id="cmd" name="cmd" value="_cart" type="hidden" />
 	    <input	id="upload" name="upload" value="1" type="hidden" />
 

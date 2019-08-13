@@ -48,7 +48,7 @@ class Contus_Configuration_Block_Adminhtml_About extends Mage_Adminhtml_Block_Ab
             <table cellspacing="0" cellpading="0" class="developer">
                 <tr>
                     <td class="developer-label "><img src="' . $logoLink . '" width="180px" > </td>
-                    <td class="developer-text ">' . $helper->__ ( '<strong>version 2.1</strong> ' ) . '</td>
+                    <td class="developer-text ">' . $helper->__ ( '<strong>version 2.2</strong> ' ) . '</td>
                 </tr>
                 <tr>
                     <td class="developer-label line">' . $helper->__ ( 'Extension:' ) . '</td>

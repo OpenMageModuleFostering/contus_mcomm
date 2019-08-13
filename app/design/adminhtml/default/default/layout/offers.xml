@@ -2,6 +2,12 @@
 <layout version="0.1.0">
     <offers_adminhtml_offers_index>
         <reference name="content">
+        <block type="adminhtml/store_switcher" name="store_switcher"
+                as="store_switcher">
+                <action method="setUseConfirm">
+                    <params>0</params>
+                </action>
+            </block>
         <block type="adminhtml/template" template="offers/offers.phtml" />
             <block type="offers/adminhtml_offers" name="offers" />
         </reference>

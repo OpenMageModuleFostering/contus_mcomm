@@ -46,9 +46,10 @@ class Contus_Pushnoteproducts_Adminhtml_PushnoteproductsController extends Mage_
         $params = $this->getRequest ()->getPost ();
         $message = $params ['product_name'];
         $id = $params ['product_id'];
+        $store_id = $params ['store_id'];
         
         if ($isEnabled) {
-            $this->notification ( $message, $id );
+            $this->notification ( $message, $id, $store_id );
         } else {
             Mage::getSingleton ( 'core/session' )->addError ( 'Please enable push notification option for product.' );
             $this->_redirectReferer ();
@@ -63,11 +64,12 @@ class Contus_Pushnoteproducts_Adminhtml_PushnoteproductsController extends Mage_
      *            
      * @param int $id            
      */
-    public function notification($message, $id) {
+    public function notification($message, $id, $store_id) {
         
         // Information to send in the push notification
         $msg ['msg'] = $message;
         $msg ['id'] = $id;
+        $msg ['store_id'] = $store_id;
         $msg ['type'] = 'product';
         
         // MCOM demo googel api key
@@ -78,7 +80,7 @@ class Contus_Pushnoteproducts_Adminhtml_PushnoteproductsController extends Mage_
         // Send Push Notification to Android and ios
         $this->sendNotificationAndroid ( $gcmKey, $msg );
         $result = $this->sendNotificationiOS ( $result['pemfile'], $gcmKey, $result['mode'], $msg);
-      
+     
         Mage::getSingleton ( 'core/session' )->addSuccess ( 'Notification Sent Successfully. ' );
         $this->_redirectReferer ();
     }
@@ -99,7 +101,7 @@ class Contus_Pushnoteproducts_Adminhtml_PushnoteproductsController extends Mage_
         $db_read = Mage::getSingleton ( 'core/resource' )->getConnection ( 'core_read' );
         // get the table preix value
         $prefix = Mage::getConfig ()->getTablePrefix ();
-        $userDetails = $db_read->fetchAll ( "SELECT devicetoken FROM  " . $prefix . "token WHERE devicetype='android' group by devicetoken" );
+        $userDetails = $db_read->fetchAll ( "SELECT devicetoken FROM  " . $prefix . "mcomm_token WHERE devicetype='android' group by devicetoken" );
         
         foreach ( $userDetails as $users ) {
             // get the device token from the database
@@ -158,12 +160,14 @@ class Contus_Pushnoteproducts_Adminhtml_PushnoteproductsController extends Mage_
         $db_read = Mage::getSingleton ( 'core/resource' )->getConnection ( 'core_read' );
         // get the table preix value
         $prefix = Mage::getConfig ()->getTablePrefix ();
-        $userDetails = $db_read->fetchAll ( "SELECT devicetoken FROM  " . $prefix . "token WHERE devicetype='iphone' group by devicetoken" );
+        $userDetails = $db_read->fetchAll ( "SELECT devicetoken FROM  " . $prefix . "mcomm_token WHERE devicetype='iphone' AND  `devicetoken` IS NOT NULL 
+AND  `devicetoken` !=  ''  group by devicetoken" );
         
         foreach ( $userDetails as $users ) {
             // get the device token from database
             $registration_ids [] = $users ['devicetoken'];
         }
+       
         $ctx = stream_context_create ();
         stream_context_set_option ( $ctx, 'ssl', 'local_cert', $pemfile );
         
@@ -178,9 +182,9 @@ class Contus_Pushnoteproducts_Adminhtml_PushnoteproductsController extends Mage_
         $fp = stream_socket_client ( 'ssl://gateway.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT | STREAM_CLIENT_PERSISTENT, $ctx );
         }
         if (! $fp)
-            echo ("Failed to connect: $err $errstr" . PHP_EOL);
+            $connetionStatus = ("Failed to connect: $err $errstr" . PHP_EOL);
         else
-            echo 'Connected to APNS' . PHP_EOL;
+            $connetionStatus = 'Connected to APNS' . PHP_EOL;
             
             // Create the payload body
         $body ['aps'] = array (
@@ -201,11 +205,11 @@ class Contus_Pushnoteproducts_Adminhtml_PushnoteproductsController extends Mage_
             $result = fwrite ( $fp, $msg, strlen ( $msg ) );
             
             if (! $result)
-                echo 'Message not delivered' . PHP_EOL;
+                $deliverStatus =  'Message not delivered' . PHP_EOL;
             else
-                echo 'Message successfully delivered->' . $message ['msg'] . PHP_EOL;
+                $deliverStatus =  'Message successfully delivered->' . $message ['msg'] . PHP_EOL;
             
-            print_r ( $message );
+           // print_r ( $message );
         }
         // Close the connection to the server
         fclose ( $fp );
